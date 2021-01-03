@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
+    
+    <title>Reassign Testing</title>
+</head>
+<body>
+<form action="/createPool" method = "POST">
+        <!-- copy some template online just for testing -->
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Create Pool</h3>
+            </div>
+            <div class="panel-body">
+                <p>Pool ID:</label><input type="number" name = "poolID" id="poolID" size="5" min ="0" required/>
+                    <label id="poolIDFalse" style="color: red; visibility: hidden" >You must enter a poolID</label></p>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" data-toggle="table">
+                        <thead>
+                        <tr>
+                            {% for i in labels %}
+                                {% if i == "Date Tested" %}
+                                    <th data-sortable="true">{{ i }}</th>
+                                {% else %}
+                                    <th>{{ i }}</th>
+                                {% endif %}
+                            {% endfor %}
+                            <th>Include in Pool</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in content %}
+                            <tr>
+                                {% for j in i %}
+                                    <td>{{ j }}</td>
+                                {% endfor %}
+                                <td><input type="checkbox" id="{{ loop.index }}" name="{{ loop.index }}" value="{{ i[0] }}"></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+    
+<p><button onclick="return checkall();" type="submit"  value="Create Pool" >Create Pool</button></p>
+</form>
+
+<p><a href="/dashboard">Back</a></p>
+
+
+<script type="text/javascript" >
+    function checkpoolID(){
+      var pwd=document.getElementById("poolID").value;
+      if(!pwd||pwd.length<1){
+        document.getElementById("poolIDFalse").style.visibility="visible";
+        return false;
+      } else {
+        document.getElementById("poolIDFalse").style.visibility="hidden";
+        return true;
+      }
+    }
+    function checkall(){
+      var cpd=checkpoolID();
+      if(cpd){
+        return true;
+      }else{
+        return false;
+      }
+    }
+  </script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+</body>
+</html>

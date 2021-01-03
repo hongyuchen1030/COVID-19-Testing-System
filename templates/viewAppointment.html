@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
+    <title>View Appointments</title>
+
+</head>
+<body>
+<form action="/viewAppointment" method = "POST" id="viewForm">
+    <div><label for="siteName">SiteName: (Dropdown can automatically update right now)</label>
+
+    <select name="siteName" id="siteName">
+        <option name="siteName" value="">----Please Select a Site------</option>
+        {% for i in allSites %}
+            <option name="siteName" value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+
+
+    </select>
+    </div>
+
+    <div>
+        <label for="start">Start date:</label>
+        <input type="date" id="start" name="DateStart"
+       min="2020-01-01" max="2020-12-31">
+
+        <label for="end">End date:</label>
+
+        <input type="date" id="end" name="DateEnd"
+        min="2020-01-01" max="2020-12-31">
+    </div>
+
+    <div>
+        <label>Time:</label>
+
+       <input type="time" id="starttime" name="TimeStart"
+       min="09:00" max="18:00" >
+        <input type="time" id="endtime" name="TimeEnd"
+       min="09:00" max="18:00" >
+    </div>
+
+    <label >Availability</label>
+         <label class="form-control">
+         <input type="radio" name="Availability" value="booked" id="booked"><label for="booked"> Show Booked only </label>
+         <input type="radio" name="Availability" value="available" id="available"><label for="available"> Show available only </label>
+         <input type="radio" name="Availability" value="all" id="all"><label for="all"> Show All </label>
+
+    </label>
+
+    <p><input type = "submit" value = "Filter Appointment" /></p>
+    <input type="submit" value="Reset" />
+
+    </form>
+
+
+    <div class="row"  >
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>View Appointment</h3>
+<h3>Current Filter: </h3>
+                <p>{%for key in filter_data%}<span><text style="font-weight: bold">{{key}}:</text>{{filter_data[key]}}   </span>{%endfor%}</p>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" data-toggle="table">
+                        <thead>
+                        <tr>
+                            {% for i in labels %}
+                                    <th data-sortable="true">{{ i }}</th>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        <tbody >
+
+                        {% for i in content %}
+                            <tr>
+                                {% for j in i %}
+                                    <td>{{ j }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form action="/dashboard" method="GET" id="backToDashboard">
+</form>
+<form action="/viewAppointment" method="GET" id="Reset">
+</form>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+<a href="javascript:{}" onclick=" document.getElementById('backToDashboard').submit(); return false;"><button type="button">Back(Home)</button></a>
+<span>&nbsp&nbsp&nbsp&nbsp<a href="javascript:{}" onclick=" document.getElementById('Reset').submit(); return false;"><button type="button">Reset</button></a></span>
+
+</body>
+</html>
+
+</body>
+</html>

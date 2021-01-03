@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Welcome Employee!</title>
+  <style type="text/css">
+    label{
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+<form action="/EmployeeRegister" method = "POST" >
+  {{hint}}
+  <p>Username <input type = "text" name = "Username" required/></p>
+  <p>Password <input type = "password" name = "Password" required id="pwd"/>   </p>
+<label id="pwdfalse" style="color: red;">The password length must be greater than 8 and less than 16</label>
+  <p>Confirm Password <input type = "password" name = "ConfirmPwd" id="pwd2" required/></p>
+  <label id="pwdfalse2" style="color: red;">Two passwords are not consistent</label>
+  <p>First Name <input type = "text" name = "FName" required/></p>
+  <p>Last Name <input type = "text" name = "LName" required/></p>
+  <p>Email <input type = "email" name = "Email" id="emailInput" required minlength="5" maxlength="25"/></p>
+   
+  <div class="employeeInfo"  >
+    <div id = "Role" >
+      <input type="checkbox" name="employType" value="labTech" id = "Labtech"> Lab-Technician
+      <input type="checkbox" name="employType" value="siteTester" id = "Tester"> Site Tester
+      <label id="rolefalse" style="color: red;">Please select at least one role</label>
+    </div>
+
+    <p>Phone(for test) :<input type="tel" name = "Phone" id="Phone" pattern="[0-9]{10}" required/> </p>
+    <label id="phonefalse" style="color: red;">Phone number is invalid</label>
+  </div>
+  <p><button onclick="return checkall();" type="submit"  value="Register" >Register</button></p>
+</form>
+
+ <script type="text/javascript" >
+
+    function chechpwd(){
+      var pwd=document.getElementById("pwd").value;
+      var pwd2 = document.getElementById("pwd2").value;
+      if(pwd.length<8||pwd.length>16){
+        document.getElementById("pwdfalse").style.visibility="visible";
+        return false;
+      }
+      if (pwd != pwd2) {
+        document.getElementById("pwdfalse2").style.visibility="visible";
+        return false;
+      } else {
+        document.getElementById("pwdfalse2").style.visibility="hidden";
+        return true;
+
+      }
+    }
+
+    function checkRole(){
+      var lab = document.getElementById("Labtech");
+      var tester = document.getElementById("Tester");
+      if (!lab.checked && !tester.checked) {
+        document.getElementById("rolefalse").style.visibility="visible";
+        return false;
+      } else {
+        document.getElementById("rolefalse").style.visibility="hidden";
+        return true;
+      }
+
+    }
+   function checkEmail(){
+        var emailVar = document.getElementById("emailInput");
+        if(emailVar.length<5||emailVar.length>25) {
+            document.getElementById("emailFalse").style.visibility="visible";
+            return false;
+        }
+        return true;
+    }
+
+    function checkall(){
+      var cpd=chechpwd();
+      var cr = checkRole();
+      var em = checkEmail();
+      if(cpd&&cr&&em){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
+  </script>
+</body>
+</html>

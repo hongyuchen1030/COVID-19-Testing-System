@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GT Covid Testing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+  <h1>Register as One of the Following Roles</h1>
+  <p> </p>
+  <form action="/regform" method = "POST">
+    <a href="/StudentRegister">Student</a> or <a href="/EmployeeRegister">Employee</a>
+
+
+
+
+
+
+
+    <!-- Old Code, Feel free to use it if you figure out the solution-->
+
+<!--    <p>Username <input type = "text" name = "Username" required/></p>-->
+<!--    <p>Password <input type = "text" name = "Password" required/></p>-->
+<!--    <p>Confirm Password <input type = "text" name = "ConfirmPwd" required/></p>-->
+<!--    <p>First Name <input type = "text" name = "FName" required/></p>-->
+<!--    <p>Last Name <input type = "text" name = "LName" required/></p>-->
+<!--    <p>Email <input type = "text" name = "Email" required/></p>-->
+
+<!--    <div>-->
+<!--      <label >UserType</label>-->
+<!--      <label class="form-control">-->
+
+<!--        &lt;!&ndash;Toggle the display of student and employee&ndash;&gt;-->
+<!--        <input type="button" onclick="student_display()" name="Type"  id="student" value="student">-->
+<!--        <input type="button" onclick="employee_display()" name="Type"  id="employee" value="employee">-->
+
+<!--      </label>-->
+<!--      <div class="studentInfo" style="visibility: hidden" >-->
+
+<!--        <label for="Location">Location:</label>-->
+<!--        <select name="Location" id="Location" required = "false">-->
+<!--          <option value="">&#45;&#45;Select A Location&#45;&#45;</option>-->
+<!--          <option value="East Campus">East Campus</option>-->
+<!--          <option value="West Campus">West Campus</option>-->
+<!--        </select>-->
+
+<!--        <label for="HouseType">Housing Typle:</label>-->
+<!--        <select name="HouseType" id="HouseType" required = "false">-->
+<!--          <option value="">&#45;&#45;Select A Housing Type&#45;&#45;</option>-->
+<!--          <option value="Student Housing">Student Housing</option>-->
+<!--          <option value="Greek Housing">Greek Housing</option>-->
+<!--          <option value="Off-Campus House">Off-Campus House</option>-->
+<!--          <option value="Off-Campus Apartments">Off-Campus Apartments</option>-->
+<!--        </select>-->
+
+<!--      </div>-->
+
+<!--      <div class="employeeInfo" style="visibility: hidden" >-->
+<!--        <div id = "Role" required = "false">-->
+<!--          <input type="checkbox" name="employType" value="labTech" > Lab-Technician-->
+<!--          <input type="checkbox" name="employType" value="siteTester" > Site Tester-->
+<!--        </div>-->
+
+<!--        <p>Phone(for test) :<input type="number" name = "Phone" id="Phone" size="10"/> </p>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--    <p><button type="submit" value="submit">Register</button></p>-->
+
+
+  </form>
+
+  <p><a href="/">Back</a></p>
+</div>
+
+
+
+
+
+<script type="text/javascript" >
+
+//  function student_display(){
+//  //toggle with the visibility
+//  var stuList = document.querySelectorAll('.studentInfo');
+//  var empList = document.querySelectorAll('.employeeInfo');
+//
+//  for (var x = 0; x < stuList.length; x++ ) {
+//    stuList[x].style.visibility="visible";
+//  }
+//
+//  for (var y = 0; y < empList.length; y++ ) {
+//    empList[y].style.visibility="hidden";
+//  }
+//
+//  //set the input value
+//   document.getElementById("student").value = "student" ;
+//
+//
+//
+//
+//
+//
+//  //clear the employee value
+//  var jobs = document.getElementsByName("employType")
+//  for (var i=0;i<jobs.length;i++) {
+//    jobs[i].checked = false;
+//  }
+//  document.getElementById("Phone").value = "";
+//
+//
+//
+//
+//}
+//
+//function employee_display(){
+//  var stuList = document.querySelectorAll('.studentInfo');
+//  var empList = document.querySelectorAll('.employeeInfo');
+//  for (var x = 0; x < stuList.length; x++ ) {
+//    stuList[x].style.visibility="hidden";
+//  }
+//
+//  for (var x = 0; x < empList.length; x++ ) {
+//    empList[x].style.visibility="visible";
+//  }
+//
+//  document.getElementById("employee").value = "employee" ;
+//
+//
+//  //clear the student value:
+//  document.getElementById("Location").value = "";
+//  document.getElementById("HouseType").value = "";
+//
+//
+//
+//}
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

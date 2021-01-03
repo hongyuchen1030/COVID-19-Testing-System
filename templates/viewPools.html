@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>viewPools</title>
+</head>
+<body>
+<form action="/viewPools" method = "POST">
+    <div>
+    <h1>View Pools</h1>
+    <label >Pool Status: </label>
+    <select name="Status" id="Status">
+        <option  name="Status" value="" id="all"><label for="Neg">All</label></option>
+         <option  name="Status" value="Negative" id="Neg"><label for="Neg">Negative</label></option>
+         <option  name="Status" value="Positive" id="Pos"><label for="Pos">Positive</label></option>
+         <option  name="Status" value="Pending" id="Pen"><label for="Pen">Pending</label></option>
+    </select>
+
+    <label for="start">Date Processed: </label>
+    <input type="date" id="start" name="DateStart"
+       min="2020-01-01" max="2020-12-31">
+
+    <label for="end"> - </label>
+
+    <input type="date" id="end" name="DateEnd"
+       min="2020-01-01" max="2020-12-31">
+
+    <label for="processed_by">Processed By: </label>
+    <input name="LabTech" id="processed_by">
+
+
+    <p style="margin-left:2px;"><input type = "submit" value = "view" /></p>
+</div>
+
+
+
+
+        <!-- copy some template online just for testing -->
+    <form action = "/poolResult/1" method="GET" id = "1"></form>
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+    <h3 style="margin-left:10px;">ViewPools</h3>
+            <div class="panel-heading">
+                <h3>Current Filter: </h3>
+                <p>{%for key in filter_data%}<span><text style="font-weight: bold">{{key}}:</text>{{filter_data[key]}}   </span>{%endfor%}</p>
+            </div>
+            </div>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                                {% for i in labels %}
+                                {% if loop.index == 1 or loop.index == 2%}
+                                    <td>{{i}}</td>
+                                {%else%}
+                                {%set l = loop.index%}
+                                <form action = "/viewPools" method="POST" id = '{{i}}'>
+                                    <td>
+                                        <input type="hidden" name = 'pending1' value = {{pending}}>
+                                        <input type="hidden" name="filter_column" value = {{l}}>
+                                        <input type="hidden" name="content_filter" value = "{{content}}">
+                                        <a href="javascript:{}" onclick=" document.getElementById('{{i}}').submit(); return false;"> {{i}} </a>
+                                    </td>
+                                </form>
+                                {%endif%}
+                                {% endfor %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in content %}
+                                <tr>
+                                    {% for j in i %}
+                                        {%if loop.index0 == 0 and j not in pending%}
+                                        <form action = "/poolResult/{{j}}" method="GET" id = "{{j}}">
+                                            <td>
+                                                <input type="hidden" name = 'Testid' value="{{j}}">
+                                                <a href="javascript:{}" onclick="document.getElementById('{{j}}').submit(); return false;">{{j}}</a>
+                                            </td>
+                                        </form>
+                                        {%elif loop.index0 == 0 and j in pending%}
+                                        <form action = "/processPools/{{j}}" method="GET" id = "{{j}}">
+                                            <td>
+                                                <input type="hidden" name = 'Testid' value="{{j}}">
+                                                <a href="javascript:{}" onclick="document.getElementById('{{j}}').submit(); return false;">{{j}}</a>
+                                            </td>
+                                        </form>
+                                        {% else %}
+                                        <td>{{ j }}</td>
+                                        {%endif%}
+                                    {% endfor %}
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+        </div>
+</div>
+    </div>
+    </div>
+
+</div>
+</form>
+
+<form action="/dashboard" method="GET" id="backToDashboard">
+</form>
+<form action="/viewPools" method="GET" id="Reset">
+</form>
+<a href="javascript:{}" onclick=" document.getElementById('backToDashboard').submit(); return false;"><button type="button">Back(Home)</button></a>
+<span>&nbsp&nbsp&nbsp&nbsp<a href="javascript:{}" onclick=" document.getElementById('Reset').submit(); return false;"><button type="button">Reset</button></a></span>
+
+
+
+</body>
+</html>
