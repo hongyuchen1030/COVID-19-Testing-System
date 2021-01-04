@@ -34,7 +34,7 @@ pip3 install flask-mysqldb
 
  
 
-Alternatively, one can utilize the virtual environments pre-made in the zip file. \venv for Mac, \zilongvenv for Windows 
+Alternatively, one can utilize the virtual environments pre-made in the zip file. \venv for Mac
 
 Run Instructions: 
 
@@ -73,13 +73,13 @@ Navigate to the given web address on a web browser
 
 Technologies: 
 
-We used Python with the Flask framework to create the core-backend for the website, creating the base web-app. In order to build the frontend to this webapp, we utilized Bootstrap with HTML and CSS, including the extension Bootstrap Table. From there, we utilized flask_mysqldb in order to connect the Flask app with our locally hosted mySQL database. User logins were handled via sessions in Flask, enabling us to return specific webpages depending on the type of user logged in. 
+We used Python with the Flask framework to create the core-backend for the website, creating the base web-app. In order to build the frontend to this webapp, we utilized Bootstrap with HTML and CSS, including the extension Bootstrap Table. From there, we utilized flask_mysqldb in order to connect the Flask app with our locally hosted mySQL database. User logins were handled via sessions in Flask, enabling us to return specific webpages depending on the type of user logged in. User duplication detection are handled both in the front-end and the backend database to prevent primary key errors and the same user registers in the system more than once 
 
  
 
 Distribution of work: 
 
-Hongyu: Handled screens 12, 13, 14, 15, 16a, as well as user registration/user-duplication-identification and interaction between frontend and backend
+Hongyu: Handled screens 12, 13, 14, 15, 16a, as well as user registration/user-duplication-identification and interaction between frontend and backend including frontend table display.
 
 Yingnan: Handled screens 4, 5, 6, 7, 8, 9 as well as sortable tables and part of front-end files 
 
