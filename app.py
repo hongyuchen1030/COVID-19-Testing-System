@@ -25,7 +25,7 @@ app.config['MYSQL_HOST'] = 'localhost'
 
 # User's configs, comment these back out
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'please enter your pwd'
+app.config['MYSQL_PASSWORD'] = 'chy190354890'
 
 app.config['MYSQL_DB'] = 'covidtest_fall2020'
 # This code assumes you've already instantiated the DB
