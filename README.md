@@ -1,4 +1,21 @@
-Setup Instruction: 
+# Screens Description
+note: the front-end styling is only for reference now.
+
+##DashBoard for different users
+![campgrounds](https://github.com/hongyuchen1030/YelpCamp/blob/master/readmeImage/campgrounds.png?raw=true)
+
+
+
+
+
+
+
+
+
+
+
+
+# Setup Instruction: 
 
 Requires MySQL server running on local machine. 
 
