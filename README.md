@@ -1,15 +1,58 @@
 # Screens Description
 note: the front-end styling is only for reference now.
 
+### Registration /Login
+![Registration](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/Registration.png?raw=true)
+![Login](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/login.png?raw=true)
+
 ### DashBoard for different users
-![Homescreens](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/Homescreens?raw=true)
+![Homescreens](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/Homescreens.png?raw=true)
+
+### Student View Results
+![StudentViewResults](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/StudentViewResults.png?raw=true)
+
+### Explore Test Result
+![testresult](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/testresult.png?raw=true)
+
+### Aggregate Test Result
+![aggregateresult](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/aggregateresult.png?raw=true)
+
+### Sign up for test
+![signuptest](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/signuptest.png?raw=true)
+
+### Process Test
+![processTest](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/LabTechTest.png?raw=true)
+
+### View Pools
+![viewpools](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/viewpools.png?raw=true)
+
+### Create Pools
+![createpools](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/createpools.png?raw=true)
+
+### Process Pools
+![processpool](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/processpool.png?raw=true)
+
+### Create appoinments
+![createapp](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/createapp.png?raw=true)
+
+### View appoinments
+![viewapp](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/viewapp.png?raw=true)
+
+### Reassign Tester
+![reassigntester](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/reassigntester.png?raw=true)
+
+### Create testingSites
+![createTestsite](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/createTestsite.png?raw=true)
+
+### Explore Pool Results
+![explorepool](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/explorepool.png?raw=true)
+
+### Tester Changing Testsite
+![testerchangesite](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/testerchangesite.png?raw=true)
 
 
-
-
-
-
-
+### View Daily Results
+![dailyresult](https://github.com/hongyuchen1030/COVID-19-Testing-System/blob/master/readmeImage/dailyresult.png?raw=true)
 
 
 
